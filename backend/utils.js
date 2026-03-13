@@ -8,7 +8,7 @@ function findMax(arr) {
         // semantically correct choice for "no maximum found".
         return undefined; 
     }
-    let max = Number.NEGATIVE_INFINITY; // FIX: Initialize max to the smallest possible number
+    let max = Number.NEGATIVE_INFINITY; // Initialize max to the smallest possible number to correctly handle negative numbers
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > max) {
             max = arr[i];
