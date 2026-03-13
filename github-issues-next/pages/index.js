@@ -1,3 +1,4 @@
+```javascript
 // pages/index.js
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -41,7 +42,12 @@ export default function Home() {
               }}
             >
               <h3>{issue.title}</h3>
-              <p>{issue.body}</p>
+              {/* Fix for issue #7: Handle cases where issue.body might be null, undefined, or empty */}
+              <p>
+                {issue.body && issue.body.trim() !== ""
+                  ? issue.body
+                  : "No description provided."}
+              </p>
               <a href={issue.html_url} target="_blank" rel="noreferrer">
                 View on GitHub
               </a>
@@ -52,3 +58,4 @@ export default function Home() {
     </div>
   );
 }
+```
