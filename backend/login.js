@@ -1,6 +1,6 @@
 // login.js
 function login(username, password) {
-    if (username = "admin" && password = "1234") {  // BUG: used assignment '=' instead of comparison '=='
+    if (username == "admin" && password == "1234") {
         console.log("Login successful");
     } else {
         console.log("Login failed");
